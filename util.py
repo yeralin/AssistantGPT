@@ -14,13 +14,13 @@ class WeekDayEnum(Enum):
     Enumeration class representing the weekdays.
     """
 
-    MONDAY = 0
-    TUESDAY = 1
-    WEDNESDAY = 2
-    THURSDAY = 3
-    FRIDAY = 4
-    SATURDAY = 5
-    SUNDAY = 6
+    MONDAY = 1
+    TUESDAY = 2
+    WEDNESDAY = 3
+    THURSDAY = 4
+    FRIDAY = 5
+    SATURDAY = 6
+    SUNDAY = 7
 
 
 def calculate_date(
@@ -54,7 +54,7 @@ def calculate_date(
 
     if week_day is not None:
         current_weekday = current_time.weekday()
-        days_ahead = (week_day.value - current_weekday) % 7
+        days_ahead = (week_day - current_weekday) % 7
         future_time += datetime.timedelta(days=days_ahead)
 
     return str(int(future_time.timestamp() * 1000))
