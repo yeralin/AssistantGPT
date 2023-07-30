@@ -19,9 +19,9 @@ class ClickUp:
         self,
         name: str,
         description: str,
-        priority: int,
         due_date: int,
         due_date_time: bool = False,
+        priority: int = 4,
         tags: list = []
     ):
         """
