@@ -60,6 +60,22 @@ def calculate_date(
     return str(int(future_time.timestamp() * 1000))
 
 
+def escape_telegram_message(message: str) -> str:
+    """
+    Escapes special characters for a Telegram message.
+
+    Args:
+        message (str): The message to escape.
+
+    Returns:
+        str: The escaped message.
+    """
+    return (
+        message.replace("-", r"\-")
+        .replace(".", r"\.")
+    )
+
+
 async def typing_action(context: CallbackContext, chat_id: int):
     """
     Coroutine that sends a "typing..." action to the chat every 5 seconds.

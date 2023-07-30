@@ -7,6 +7,7 @@ from io import BytesIO
 import dotenv
 
 from telegram import Update
+from telegram.constants import ParseMode
 from telegram.ext import (
     ApplicationBuilder,
     CallbackContext,
@@ -110,7 +111,9 @@ class TelegramBot:
         response_message = self.gpt.converse(transcript)
         typing_task.cancel()
         await context.bot.send_message(
-            chat_id=update.effective_chat.id, text=response_message
+            chat_id=update.effective_chat.id,
+            text=util.escape_telegram_message(response_message),
+            parse_mode=ParseMode.MARKDOWN_V2,
         )
 
     async def rejection(self, update: Update, context: CallbackContext) -> None:
