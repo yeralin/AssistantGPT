@@ -34,7 +34,7 @@ class TelegramBotException(Exception):
 class TelegramBot:
     """Main Telegram bot class"""
 
-    WELCOME_MESSAGE = """I am AssistantGPT bot!"""
+    WELCOME_MESSAGE = """I am AssistantGPT! Send me a voice recording of your schedule and I will put it on your calendar."""
 
     REJECTION_MESSAGE = """Unfortunately this bot is no longer available."""
 

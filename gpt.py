@@ -47,7 +47,7 @@ class GPT:
             For example, if a user says "I have a meeting tomorrow at 9AM", you first call 'calculate_date' with 'days' set to 1 and 'hours' set to 9. 
             'calculate_date' will output a unix timestamp. Then you call 'create_task' function with the outputted unix timestamp in 'due_date' parameter.
 
-            The final user response should be in plain text (do not use Markdown).
+            NEVER ask follow up questions. First always create all tasks before sending the final response. Make best judgements from the context.
     """
 
     def __init__(self, available_functions: Dict[str, Any]):
